@@ -5,16 +5,9 @@ module NumbersAndWords
     module FiguresConverter
       module Options
         module Es
-          class Apocopated
-            attr_accessor :strategy, :options
-
-            def initialize(proxy, *_args)
-              @strategy = proxy.strategy
-              @options = proxy.options
-            end
-
+          class Apocopated < Base::Helpers
             def result
-              active?
+              return :apocopated if active?
             end
 
             private

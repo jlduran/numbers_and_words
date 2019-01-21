@@ -5,15 +5,12 @@ module NumbersAndWords
     module FiguresConverter
       module Options
         module Base
-          class Gender < Helpers
-            def result
-              active? ? @options[:gender].to_sym : :male
-            end
+          class Helpers
+            attr_accessor :strategy, :options
 
-            private
-
-            def active?
-              @options[:gender]
+            def initialize(proxy, *_args)
+              @strategy = proxy.strategy
+              @options = proxy.options
             end
           end
         end

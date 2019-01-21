@@ -5,14 +5,7 @@ module NumbersAndWords
     module FiguresConverter
       module Options
         module Base
-          class RemoveZero
-            attr_accessor :strategy, :options
-
-            def initialize(proxy, *_args)
-              @strategy = proxy.strategy
-              @options = proxy.options
-            end
-
+          class RemoveZero < Helpers
             def result
               active?
             end
